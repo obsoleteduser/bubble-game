@@ -1,7 +1,7 @@
 const state = {
     name: null,
     highScore: 0,
-    speed: 1000,
+    speed: 100,
     score: 0
 }
 

@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'game';
+    src: url(/assets/Press_Start_2P/PressStart2P-Regular.ttf);
+}
+
 .game-container{
     display: flex;
     flex-direction: column;
@@ -8,10 +13,13 @@
     background-color: gold;
     font-weight: 600;
     gap: 1.5rem;
+    border-radius: 5px;
 }
 
 .container-display{
+    text-align: center;
     position: relative;
+    padding: 1rem;
     height: 22rem;
     width: 20rem;
     background-color: steelblue;
@@ -20,6 +28,9 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    font-family: game;
+    font-size: 1.8rem;
+
 }
 
 .controller{
