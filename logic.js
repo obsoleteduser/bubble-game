@@ -1,6 +1,3 @@
-
-render(root, renderIntro())
-
 const nameInput = document.querySelector('.input-name')
 const submit = document.querySelector('.enter')
 
@@ -21,6 +18,7 @@ submit.addEventListener('click', ()=>{
         ball.style.top = `${Math.ceil(Math.random() * 100) }px`
         ball.style.left = `${Math.ceil(Math.random() * 100)}px`
         display.append(ball)
+        
     }, state.speed)
 
 })

@@ -33,4 +33,6 @@ const renderIntro = (element) => {
 </div>`
 }
 
+render(root, renderIntro())
+
 
