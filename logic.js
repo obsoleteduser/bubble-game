@@ -18,8 +18,17 @@ submit.addEventListener('click', ()=>{
         ball.style.top = `${Math.ceil(Math.random() * 100) }px`
         ball.style.left = `${Math.ceil(Math.random() * 100)}px`
         display.append(ball)
-        
+        document.querySelectorAll('.ball').forEach(ball => {
+            ball.addEventListener('click', ()=>{
+                ball.remove()
+                state.score = state.score + 1
+                document.querySelector('.score').innerHTML = `Score: ${state.score}`
+
+            })
+        })
     }, state.speed)
+
+    
 
 })
 

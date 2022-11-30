@@ -9,8 +9,8 @@ const render = (element, module)=>{
     return `<div class="game-container">
     <div class="score-container">
         <div class="player">Player</div>
-        <div class="score">Score</div>
-        <div class="high-score">High Score</div>
+        <div class="score">Score:</div>
+        <div class="high-score">High Score: </div>
     </div>
     <div class="container-display"></div>
     <div class="controller">
