@@ -15,7 +15,7 @@ submit.addEventListener('click', () => {
     const medium = document.querySelector('.medium')
     const hard = document.querySelector('.hard')
 
-    const startGame = () => {
+    const startGame = (InitInterval) => {
 
         const ball = document.createElement('div')
         ball.style.position = 'absolute'
@@ -24,7 +24,7 @@ submit.addEventListener('click', () => {
         ball.style.left = `${Math.ceil(Math.random() * 300)}px`
         ball.classList.add('ball')
         display.append(ball)
-        document.querySelectorAll('.ball').length === 50 && (clearInterval(interval), display.innerHTML = "Game Over!")
+        document.querySelectorAll('.ball').length === 50 && (clearInterval(InitInterval), display.innerHTML = "Game Over!")
         document.querySelectorAll('.ball').forEach(ball => {
             ball.addEventListener('click', (e) => {
                 e.stopImmediatePropagation()
@@ -46,7 +46,7 @@ submit.addEventListener('click', () => {
         state.speed = 1000
         display.innerHTML = null
         clearInterval(interval)
-        const easyinterval = setInterval(startGame, state.speed)
+        const easyinterval = setInterval(()=>{startGame(easyinterval)}, state.speed)
         
 
     })
@@ -55,7 +55,7 @@ submit.addEventListener('click', () => {
         state.speed = 700
         display.innerHTML = null
         clearInterval(interval)
-        const mediuminterval = setInterval(startGame, state.speed)
+        const mediuminterval = setInterval(()=>{startGame(mediuminterval)}, state.speed)
     })
 
 
@@ -63,7 +63,7 @@ submit.addEventListener('click', () => {
         state.speed = 300
         display.innerHTML = null
         clearInterval(interval)
-        const hardinterval = setInterval(startGame, state.speed)
+        const hardinterval = setInterval(()=>{startGame(hardinterval)}, state.speed)
     })
 
    
