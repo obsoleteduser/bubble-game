@@ -19,7 +19,7 @@ submit.addEventListener('click', () => {
     const medium = document.querySelector('.medium')
     const hard = document.querySelector('.hard')
     player.innerHTML = `Player: ${state.name}`
-    
+
 
 
     const startGame = (initInterval) => {
