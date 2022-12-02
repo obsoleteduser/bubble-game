@@ -1,6 +1,7 @@
 const state = {
     name: null,
-    highScore: 0,
+    highScore: +localStorage.getItem("highScore"),
     speed: null,
     score: 0
 }
+
