@@ -11,14 +11,14 @@ submit.addEventListener('click', () => {
     const display = document.querySelector('.container-display')
     player.innerHTML = `Player: ${state.name}`
     highScore.innerHTML = `High score: ${state.highScore}`
-    const start  = document.querySelector('.start')
+    const start = document.querySelector('.start')
     const stop = document.querySelector('.stop')
     const easy = document.querySelector('.easy')
     const medium = document.querySelector('.medium')
     const hard = document.querySelector('.hard')
 
-   
-   
+
+
 
     const startGame = (initInterval) => {
 
@@ -52,7 +52,7 @@ submit.addEventListener('click', () => {
         display.innerHTML = null
         clearInterval(interval)
         const easyinterval = setInterval(() => { startGame(easyinterval) }, state.speed)
-        stop.addEventListener('click', ()=>{clearInterval(easyinterval)})
+        stop.addEventListener('click', () => { clearInterval(easyinterval) })
 
     })
 
@@ -62,7 +62,7 @@ submit.addEventListener('click', () => {
         display.innerHTML = null
         clearInterval(interval)
         const easyinterval = setInterval(() => { startGame(easyinterval) }, state.speed)
-        stop.addEventListener('click', ()=>{clearInterval(easyinterval)})
+        stop.addEventListener('click', () => { clearInterval(easyinterval) })
 
     })
 
@@ -71,7 +71,7 @@ submit.addEventListener('click', () => {
         display.innerHTML = null
         clearInterval(interval)
         const mediuminterval = setInterval(() => { startGame(mediuminterval) }, state.speed)
-        stop.addEventListener('click', ()=>{clearInterval(mediuminterval)})
+        stop.addEventListener('click', () => { clearInterval(mediuminterval) })
     })
 
 
@@ -80,7 +80,7 @@ submit.addEventListener('click', () => {
         display.innerHTML = null
         clearInterval(interval)
         const hardinterval = setInterval(() => { startGame(hardinterval) }, state.speed)
-        stop.addEventListener('click', ()=>{clearInterval(hardinterval)})
+        stop.addEventListener('click', () => { clearInterval(hardinterval) })
     })
 
 
