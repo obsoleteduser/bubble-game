@@ -56,49 +56,52 @@ submit.addEventListener('click', () => {
     start.addEventListener('click', () => {
         state.speed = 800
         state.score = 0
+        state.highScore = localStorage.getItem('highScore')
         document.querySelector('.score').innerHTML = `Score: ${state.score}`
-        highScore.innerHTML = `High score: ${state.highScore}`
         display.innerHTML = null
         clearInterval(interval)
         const easyinterval = setInterval(() => { startGame(easyinterval) }, state.speed)
         stop.addEventListener('click', () => { clearInterval(easyinterval) })
-
+        highScore.innerHTML = `High score: ${state.highScore}`
     })
 
 
     easy.addEventListener('click', () => {
         state.speed = 800
         state.score = 0
-        highScore.innerHTML = `High score: ${state.highScore}`
+        state.highScore = localStorage.getItem('highScore')
         document.querySelector('.score').innerHTML = `Score: ${state.score}`
         display.innerHTML = null
         clearInterval(interval)
         const easyinterval = setInterval(() => { startGame(easyinterval) }, state.speed)
         stop.addEventListener('click', () => { clearInterval(easyinterval) })
-
+        highScore.innerHTML = `High score: ${state.highScore}`
     })
 
     medium.addEventListener('click', () => {
         state.score = 0
         state.speed = 500
-        highScore.innerHTML = `High score: ${state.highScore}`
+        state.highScore = localStorage.getItem('highScore')
         document.querySelector('.score').innerHTML = `Score: ${state.score}`
         display.innerHTML = null
         clearInterval(interval)
         const mediuminterval = setInterval(() => { startGame(mediuminterval) }, state.speed)
         stop.addEventListener('click', () => { clearInterval(mediuminterval) })
+        highScore.innerHTML = `High score: ${state.highScore}`
     })
 
 
     hard.addEventListener('click', () => {
         state.score = 0
         state.speed = 200
+        state.highScore = localStorage.getItem('highScore')
         highScore.innerHTML = `High score: ${state.highScore}`
         document.querySelector('.score').innerHTML = `Score: ${state.score}`
         display.innerHTML = null
         clearInterval(interval)
         const hardinterval = setInterval(() => { startGame(hardinterval) }, state.speed)
         stop.addEventListener('click', () => { clearInterval(hardinterval) })
+        highScore.innerHTML = `High score: ${state.highScore}`
     })
 
 
