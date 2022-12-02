@@ -4,4 +4,3 @@ const state = {
     speed: null,
     score: 0
 }
-

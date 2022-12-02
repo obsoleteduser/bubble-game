@@ -6,6 +6,7 @@ const submit = document.querySelector('.enter')
 submit.addEventListener('click', () => {
     state.name = nameInput.value
     render(root, renderGame())
+    const audio = new Audio("./assets/mixkit-egg-bubble-pop-3192.wav");
     const player = document.querySelector('.player')
     const highScore = document.querySelector('.high-score')
     const display = document.querySelector('.container-display')
@@ -19,9 +20,8 @@ submit.addEventListener('click', () => {
 
 
 
-
     const startGame = (initInterval) => {
-
+        state.speed === null && clearInterval(interval)
         const ball = document.createElement('div')
         ball.style.position = 'absolute'
         ball.style.marginTop = 'auto'
@@ -33,6 +33,8 @@ submit.addEventListener('click', () => {
         document.querySelectorAll('.ball').forEach(ball => {
             ball.addEventListener('click', (e) => {
                 e.stopImmediatePropagation()
+                audio.currentTime = 0;
+                audio.play()
                 ball.remove()
                 state.score = state.score + 1
 
@@ -49,6 +51,8 @@ submit.addEventListener('click', () => {
 
     start.addEventListener('click', () => {
         state.speed = 800
+        state.score = 0
+        document.querySelector('.score').innerHTML = `Score: ${state.score}`
         display.innerHTML = null
         clearInterval(interval)
         const easyinterval = setInterval(() => { startGame(easyinterval) }, state.speed)
@@ -59,6 +63,8 @@ submit.addEventListener('click', () => {
 
     easy.addEventListener('click', () => {
         state.speed = 800
+        state.score = 0
+        document.querySelector('.score').innerHTML = `Score: ${state.score}`
         display.innerHTML = null
         clearInterval(interval)
         const easyinterval = setInterval(() => { startGame(easyinterval) }, state.speed)
@@ -67,7 +73,9 @@ submit.addEventListener('click', () => {
     })
 
     medium.addEventListener('click', () => {
+        state.score = 0
         state.speed = 500
+        document.querySelector('.score').innerHTML = `Score: ${state.score}`
         display.innerHTML = null
         clearInterval(interval)
         const mediuminterval = setInterval(() => { startGame(mediuminterval) }, state.speed)
@@ -76,7 +84,9 @@ submit.addEventListener('click', () => {
 
 
     hard.addEventListener('click', () => {
+        state.score = 0
         state.speed = 200
+        document.querySelector('.score').innerHTML = `Score: ${state.score}`
         display.innerHTML = null
         clearInterval(interval)
         const hardinterval = setInterval(() => { startGame(hardinterval) }, state.speed)

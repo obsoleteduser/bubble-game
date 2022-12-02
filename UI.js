@@ -20,6 +20,7 @@ const render = (element, module)=>{
         <button class="start">Start Game</button>
         <button class="stop">Stop Game</button>
     </div>
+    <audio id="audio" src="./assets/mixkit-egg-bubble-pop-3192.wav"></audio>
 </div>`
 }
 
