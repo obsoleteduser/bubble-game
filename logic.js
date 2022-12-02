@@ -10,13 +10,13 @@ submit.addEventListener('click', () => {
     const player = document.querySelector('.player')
     const highScore = document.querySelector('.high-score')
     const display = document.querySelector('.container-display')
-    player.innerHTML = `Player: ${state.name}`
-    highScore.innerHTML = `High score: ${state.highScore}`
     const start = document.querySelector('.start')
     const stop = document.querySelector('.stop')
     const easy = document.querySelector('.easy')
     const medium = document.querySelector('.medium')
     const hard = document.querySelector('.hard')
+    player.innerHTML = `Player: ${state.name}`
+    highScore.innerHTML = `High score: ${state.highScore}`
 
 
 
