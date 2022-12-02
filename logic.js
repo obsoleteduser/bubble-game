@@ -8,7 +8,7 @@ const submit = document.querySelector('.enter')
 
 submit.addEventListener('click', () => {
     state.name = nameInput.value
-    render(root, renderGame())
+    render(root, renderGame()) && (state.loginPage = false)
     const audio = new Audio("./assets/mixkit-egg-bubble-pop-3192.wav");
     const player = document.querySelector('.player')
     const highScore = document.querySelector('.high-score')
